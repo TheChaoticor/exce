@@ -5,7 +5,7 @@ st.set_page_config(page_title="College Search", layout="wide")
 st.title("🏫 Search College by District and Name")
 
 # Load Excel file
-file_path = "/mnt/data/college contacts25.xlsx"
+file_path = "col_con.xlsx"
 try:
     df = pd.read_excel(file_path)
 except Exception as e:
