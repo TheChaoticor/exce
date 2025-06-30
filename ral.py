@@ -16,15 +16,10 @@ st.markdown("Enter values in any field below to search (leave others blank).")
 
 # Search form
 with st.form("search_form"):
-    search_inputs = {}
-    columns = df.columns.tolist()
-    cols = st.columns(3)  # Organize fields into 3 columns
-
-    for idx, col in enumerate(columns):
-        search_inputs[col] = cols[idx % 3].text_input(f"{col}", key=col)
-
+    col1, col2 = st.columns(2)
+    district_input = col1.text_input("District")
+    college_input = col2.text_input("College Name")
     submitted = st.form_submit_button("Search")
-
 # Filtering
 if submitted:
     filtered_df = df.copy()
